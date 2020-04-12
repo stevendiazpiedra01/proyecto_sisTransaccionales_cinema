@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3>Sign Up</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/signup" method="POST"  oninput='confirmpassword.setCustomValidity(confirmpassword.value != password.value ? "Las Contraseñas no Coinciden" : "")'>
+                        <div class="form-group">
+                            <input type="text" name="nombres" placeholder="Nombres" class="form-control" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="apellidos" placeholder="Apellidos" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="numerodocumento" placeholder="NO. Identificacion" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <select name="tipodocumento" class="browser-default custom-select">
+                                <option selected>Seleccione Tipo De Documento</option>
+                                <option value="1">Cedula de Ciudadania</option>
+                                <option value="2">Tarjeta de Identidad</option>
+                                <option value="3">Cedula de Extranjeria</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Correo Electronico" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="celular" placeholder="Celular" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" placeholder="Contraseña" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="confirmpassword" placeholder="Confirmar Contraseña" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                SignUp
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
