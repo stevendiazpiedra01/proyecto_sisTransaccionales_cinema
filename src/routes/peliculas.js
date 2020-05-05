@@ -27,7 +27,7 @@ router.post('/agregar_Peliculas', isLoggedIn, async(req, res) => {
     };
     await pool.query('INSERT INTO peliculas set ?', [newMovie]);
     req.flash('success', 'El registro se ha REALIZADO satisfactoriamente');
-    res.redirect('/links');
+    res.redirect('/peliculas');
 });
 //Listar Peliculas
 router.get('/', isLoggedIn, async(req, res) => {
@@ -35,5 +35,35 @@ router.get('/', isLoggedIn, async(req, res) => {
     res.render('peliculas/listar_Peliculas', { peliculas });
 });
 
+router.get('/eliminar_Pelicula/:idPelicula', isLoggedIn, async(req, res) => {
+    const { idPelicula } = req.params;
+    await pool.query('DELETE FROM funciones WHERE id_Pelicula = ? ', [idPelicula]);
+    await pool.query('DELETE FROM peliculas WHERE idPelicula = ? ', [idPelicula]);
+    req.flash('success', 'El registro se ha ELIMINADO satisfactoriamente');
+    res.redirect('/peliculas');
+});
+
+router.get('/editar_Peliculas/:idPelicula', isLoggedIn, async(req, res) => {
+    const { idPelicula } = req.params;
+    const peliculas = await pool.query('SELECT * FROM peliculas WHERE idPelicula = ?', [idPelicula]);
+    res.render('peliculas/editar_Peliculas', { pelicula: peliculas[0] });
+
+});
+
+router.post('/editar_Peliculas/:idPelicula', isLoggedIn, async(req, res) => {
+    const { idPelicula } = req.params;
+    const { titulo, descripcion, url } = req.body;
+    const editarPelicula = {
+        titulo,
+        informacionPelicula,
+        duracionPelicula,
+        fechaEstreno,
+        foto
+    };
+    await pool.query('UPDATE peliculas set ? WHERE idPelicula = ? ', [editarPelicula, idPelicula]);
+    req.flash('success', 'El registro se ha ACTUALIZADO satisfactoriamente');
+    res.redirect('/peliculas');
+
+});
 
 module.exports = router;
