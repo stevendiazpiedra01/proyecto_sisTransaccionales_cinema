@@ -1,0 +1,44 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/peliculas/agregar_Peliculas" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="titulo" placeholder="Titulo De La Pelicula"
+                                autofocus>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="informacionPelicula" rows="2" class="form-control"
+                                placeholder="Informacion de la pelicula"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="duracionPelicula" class="form-control"
+                                placeholder="Duracion de la pelicula (0h 00m)">
+                        </div>
+                        <div class="form-group">
+                            <input type="date" name="fechaEstreno" class="form-control" placeholder="Fecha de Estreno">
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroupFileAddon01">Subir</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="foto" name="foto"
+                                        aria-describedby="inputGroupFileAddon01">
+                                    <label class="custom-file-label" for="foto">Foto</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                Guardar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
