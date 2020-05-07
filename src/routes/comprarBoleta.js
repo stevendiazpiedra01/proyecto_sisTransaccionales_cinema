@@ -14,16 +14,17 @@ router.post('/comprarBoleta',isLoggedIn, async (req, res) => {
         numeroBoletasGe,
         numeroBoletasPe,
         totalPrecioBoletas,
+        idUsuario: req.user.id
     };
     await pool.query('INSERT INTO boletas set ?', [newComprarBoleta]);
     req.flash('success', 'El registro se ha REALIZADO satisfactoriamente');
-    res.redirect('/comprarBoleta/comprarBoleta');
+    res.redirect('/comprarBoleta');
 })
 
 
 //Listar Compra de boletas
 router.get('/', isLoggedIn, async(req, res) => {
-    const boletas = await pool.query('SELECT * FROM boletas');
+    const boletas = await pool.query('SELECT * FROM boletas WHERE idUsuario = ?', [req.user.id]);
     res.render('comprarBoleta/listar_boletas', { boletas });
 });
 
