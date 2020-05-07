@@ -52,6 +52,9 @@ app.use(require('./routes'));
 app.use(require('./routes/autenticacion'));
 app.use('/links', require('./routes/links'));
 app.use('/peliculas', require('./routes/peliculas'));
+app.use('/comprarBoleta', require('./routes/comprarBoleta'));
+app.use('/multiplex', require('./routes/multiplex'));
+
 
 // Public
 app.use(express.static(path.join(__dirname, 'public')));

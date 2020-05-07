@@ -8,50 +8,22 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         {{#if user}}
-
-        <li class="nav-item dropdown">
+        <!-- MENU DE AGREGAR PELICULA-->
+ <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Peliculas
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/peliculas">Todos Las Peliculas</a>
-            <a class="dropdown-item" href="/peliculas/agregar_Peliculas">Agregar Una Pelicula</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-       <!-- MENU DE MULTIPLEX--> 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Multiplex
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/multiplex">multiplex</a>
-            <a class="dropdown-item" href="/multiplex/agregar_multiplex">Agregar Un multiplex</a>
-            <a class="dropdown-item" href="/multiplex">listar Un multiplex</a>
-            <!--<a class="dropdown-item" href="/links/agregar_Peliculas">Compra de boleta </a> -->
-            <div class="dropdown-divider"></div>
-            <!-- <a class="dropdown-item" href="#">Something else here</a> -->
-          </div>
-        </li>
-        <!-- MENU DE RESERVAS -->
-  <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Reservas
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/reservas">reservas</a>
-            <a class="dropdown-item" href="/reservas/agregar">Agregar reserva</a>
-            <a class="dropdown-item" href="/reservas/editar">editar reserva </a>
-            <a class="dropdown-item" href="/reservas/listar">listar reserva </a>
+            <a class="dropdown-item" href="/peliculas">peliculas</a>
+            <a class="dropdown-item" href="/peliculas/agregar_Peliculas">Agregar pelicula</a>
+            <a class="dropdown-item" href="/peliculas/editar_Peliculas">editar pelicula </a>
+            <a class="dropdown-item" href="/peliculas/listar_Peliculas">listar pelicula </a>
             <div class="dropdown-divider"></div>
           <!--  <a class="dropdown-item" href="#">Something else here</a>  -->
           </div>
         </li>
-        <!-- MENU DE COMPRAR BOLETAS -->
+<!-- MENU DE COMPRAR BOLETAS -->
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -67,7 +39,51 @@
            <!-- <a class="dropdown-item" href="#">Something else here</a> -->
           </div>
         </li>
-<!-- MENU DE INICIO DE SESION -->
+<!-- MENU DE RESERVAS -->
+  <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Reservas
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/reservas">reservas</a>
+            <a class="dropdown-item" href="/reservas/agregar">Agregar reserva</a>
+            <a class="dropdown-item" href="/reservas/editar">editar reserva </a>
+            <a class="dropdown-item" href="/reservas/listar">listar reserva </a>
+            <div class="dropdown-divider"></div>
+          <!--  <a class="dropdown-item" href="#">Something else here</a>  -->
+          </div>
+        </li>
+<!-- MENU DE MULTIPLEX-->
+   <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Multiplex
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/multiplex">multiplex</a>
+            <a class="dropdown-item" href="/multiplex/agregar_multiplex">Agregar Un multiplex</a>
+            <a class="dropdown-item" href="/multiplex">listar Un multiplex</a>
+            <!--<a class="dropdown-item" href="/links/agregar_Peliculas">Compra de boleta </a> -->
+            <div class="dropdown-divider"></div>
+            <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+          </div>
+        </li>
+<!-- MENU AGREGAR LINK -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Links
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/links">Todos Los Links</a>
+            <a class="dropdown-item" href="/links/agregar">Agregar Un Link</a>
+             <a class="dropdown-item" href="/links/listar">Agregar Un Link</a>
+            <!--<a class="dropdown-item" href="/links/agregar_Peliculas">Compra de boleta </a> -->
+            <div class="dropdown-divider"></div>
+            <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+          </div>
+        </li>
         <li class="nav-item">
           <a href="/perfil" class="nav-link">Perfil</a>
         </li>
@@ -81,6 +97,8 @@
           <li class="nav-item">
             <a href="/signup" class="nav-link">Sign Up</a>
           </li>
+
+
         {{/if}}
 
       </ul>
