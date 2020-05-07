@@ -1,0 +1,20 @@
+<div class="container">
+     <div class="card bg-warning">
+       <div class="card text-center">
+          <div class="card-body">
+              <form action="/metodoPagos/agregar_metodosPago" method="POST">
+               <h3>¡metodos de pago!</h3>
+                 <p style="color:red;">Seleccione algun metodo de pago:</p>
+                <input list="browsers" name="metodo_Pago">
+                    <datalist id="browsers">
+                    <option value="Debito">
+                    <option value="Credito">
+                    <option value="Efecty">
+                    <option value="Paypal">
+                    </datalist>
+                <input type="submit" value="Generar">
+              </form> 
+          </div>
+        </div>  
+    </div>
+</div>
