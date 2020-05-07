@@ -1,0 +1,34 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each multiplex}}
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                 <form action="/multiplex/listar_multiplex" method="POST">
+                         <p style="color:red;">id de multiplex:</p>
+                            <h3 class="card-title text-uppercase">
+                                {{idMultiplex}}
+                            </h3>
+                        <p style="color:red;">numero de salas:</p>
+                        <p class="m-2">{{numeroSalas}}</p>
+                        <p style="color:red;">cantidad de sillas multiplex: </p>
+                        <p class="m-2">{{cantidadSillas}}</p>
+                        <p style="color:red;">nombre de multiplex</p>
+                        <p class="m-2">{{nombreMultiplex}}</p>
+                        <a href="/multiplex/eliminar/{{idMultiplex}}" class="btn btn-danger">Eliminar multiplex</a>
+                        <a href="/multiplex/editar_multiplex/{{idMultiplex}}" class="btn btn-secondary">Editar multiplex</a>
+                    </div>
+                </div>
+                </form>
+                <br>
+            </div>
+        {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>No Hay Links Creados Aun.</p>
+                    <a href="/multiplex/agregar_multiplex">Crear Uno!</a>
+                </div>
+            </div>            
+        {{/each}}
+    </div>
+</div>

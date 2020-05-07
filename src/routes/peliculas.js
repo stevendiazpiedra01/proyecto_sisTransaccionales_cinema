@@ -52,7 +52,7 @@ router.get('/editar_Peliculas/:idPelicula', isLoggedIn, async(req, res) => {
 
 router.post('/editar_Peliculas/:idPelicula', isLoggedIn, async(req, res) => {
     const { idPelicula } = req.params;
-    const { titulo, descripcion, url } = req.body;
+    const { titulo, informacionPelicula, duracionPelicula, fechaEstreno, foto } = req.body;
     const editarPelicula = {
         titulo,
         informacionPelicula,

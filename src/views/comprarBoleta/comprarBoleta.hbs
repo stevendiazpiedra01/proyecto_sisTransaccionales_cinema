@@ -1,0 +1,36 @@
+<div class="container">
+     <div class="card bg-warning">
+       <div class="card text-center">
+         <div class="card-body">
+            <form action="/comprarBoleta/comprarBoleta" method="POST">
+              <h3>¡Comprar boleta!</h3>
+                <label for="fname">Numero de boletas General:</label><br>
+                <input type="number" id="a" name="numeroBoletasGe" value="" min="1" max="40"><br>
+                <label for="lname">Numero de boletas Preferencial:</label><br>
+                <input type="number" id="b" name="numeroBoletasPe" value="" min="1" max="20"><br><br>
+                <label for="lname">Total numero de boletas:</label><br>
+                <input type="text" id="r" name="totalPrecioBoletas"readonly="readonly"/><br><br>
+                <input type="button" value="Total Boletas" onclick="totalBoletas()"/>
+                <input type="submit" value="Comprar">
+                <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+                 <script>   
+                   function totalBoletas() {
+                    var numero1 = Number($("#a").val());
+                    var numero2 = Number($("#b").val());
+                    var sumar = numero1 + numero2;
+                    var resultado = $("#r").val(sumar); }
+                  </script>
+                      <!--
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                Comprar
+                            </button>
+                        </div>
+
+                      -->
+                  </form>      
+             </div>
+        </div>  
+
+    </div>
+</div>
