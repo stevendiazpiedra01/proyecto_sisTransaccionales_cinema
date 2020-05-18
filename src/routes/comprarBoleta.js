@@ -29,6 +29,15 @@ router.get('/', isLoggedIn, async(req, res) => {
 });
 
 
+router.get('/eliminar/:idCompBoleta', isLoggedIn, async(req, res) => {
+    const { idCompBoleta } = req.params;
+    await pool.query('DELETE FROM multiplex WHERE idMultiplex = ?', [idMultiplex]);
+    req.flash('success', 'El registro se ha ELIMINADO satisfactoriamente');
+    res.redirect('/multiplex');
+});
+module.exports = router;
+
+
 
 
 

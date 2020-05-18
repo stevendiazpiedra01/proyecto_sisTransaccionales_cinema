@@ -5,7 +5,7 @@
               <form action="/metodoPagos/agregar_metodosPago" method="POST">
                <h3>¡metodos de pago!</h3>
                  <p style="color:red;">Seleccione algun metodo de pago:</p>
-                <input list="browsers" name="metodo_Pago">
+             <!--   <input list="browsers" name="metodo_Pago">
                     <datalist id="browsers">
                     <option value="Debito">
                     <option value="Credito">
@@ -13,6 +13,22 @@
                     <option value="Paypal">
                     </datalist>
                 <input type="submit" value="Generar">
+                -->
+                    
+
+                <form>
+                 <input type="radio" id="Credito" name="gender" value="male">
+                 <label for="Credito">Credito</label><br>
+                 <input type="radio" id="female" name="gender" value="female">
+                 <label for="Debito">Debito</label><br>
+                 <input type="radio" id="other" name="gender" value="other">
+                 <label for="Paypal">Paypal</label>
+                </form>       
+                <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                Comprar
+                            </button>
+                        </div>
               </form> 
           </div>
         </div>  

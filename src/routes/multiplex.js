@@ -20,11 +20,19 @@ router.post('/agregar_multiplex',isLoggedIn, async (req, res) => {
     res.redirect('/multiplex/agregar_multiplex');
 })
 
-
-
 //Listar Compra de boletas
 router.get('/', isLoggedIn, async(req, res) => {
     const multiplex = await pool.query('SELECT * FROM multiplex');
     res.render('multiplex/listar_multiplex', { multiplex });
 });
+
+
+router.get('/eliminar/:idMultiplex', isLoggedIn, async(req, res) => {
+    const { idMultiplex } = req.params;
+    await pool.query('DELETE FROM multiplex WHERE idMultiplex = ?', [idMultiplex]);
+    req.flash('success', 'El registro se ha ELIMINADO satisfactoriamente');
+    res.redirect('/multiplex');
+});
 module.exports = router;
+
+
