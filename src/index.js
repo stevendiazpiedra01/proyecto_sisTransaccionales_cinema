@@ -54,7 +54,8 @@ app.use('/links', require('./routes/links'));
 app.use('/peliculas', require('./routes/peliculas'));
 app.use('/comprarBoleta', require('./routes/comprarBoleta'));
 app.use('/multiplex', require('./routes/multiplex'));
-app.use('/metodoPagos',require('./routes/metodoPagos'))
+app.use('/metodoPagos', require('./routes/metodoPagos'));
+app.use('/reservas', require('./routes/reservas'));
 
 
 // Public

@@ -1,0 +1,31 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each peliculas}}
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                            <h3 class="card-title text-uppercase">
+                                {{titulo}}
+                            </h3>
+                        </a>
+                        <p class="m-2">{{informacionPelicula}}</p>
+                        <img src="{{foto}}" alt="W3Schools.com" style="width:150px;height:200px;">
+                        <br><br>
+                        <a href="/reservas/agregar_Reservas" class="btn btn-danger">Realizar Reserva</a>
+                        <a href="/peliculas/editar_Peliculas/{{idPelicula}}" class="btn btn-secondary">Editar</a>
+                    </div>
+                </div>
+                
+                <br>
+            </div>
+        {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>No Hay Links Creados Aun.</p>
+                    <a href="/reservas/listar_Peliculas_Reserva">Crear Uno!</a>
+                </div>
+            </div>
+            
+        {{/each}}
+    </div>
+</div>
