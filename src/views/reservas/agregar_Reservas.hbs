@@ -5,12 +5,25 @@
                 <div class="card-body">
                     <form action="/peliculas/agregar_Peliculas" method="POST">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="titulo" value="{{ reserva.idPelicula }}"
+                            <input type="text" class="form-control" name="titulo" value="{{ pelicula.titulo }}"
                                 autofocus>
+                            <small id="peliculaHelpBlock" class="form-text text-muted">
+                                Pelicula que eligio para reservar.
+                            </small>
                         </div>
                         <div class="form-group">
-                            <textarea name="informacionPelicula" rows="2" class="form-control"
-                                placeholder="Informacion de la pelicula"></textarea>
+                            <select name="seleccionarMultiplex" class="browser-default custom-select">
+                                <option selected>Seleccione Sede Multiplex</option>
+                                <option value="1">C.C. Ventura</option>
+                                <option value="2">Titan Plaza</option>
+                                <option value="3">C.C. Tunal</option>
+                                <option value="4">C.C. Calima</option>
+                                <option value="5">C.C. MetroSur</option>
+                            </select>
+                            <small id="multiplexHelpBlock" class="form-text text-muted">
+                                Seleccione el Multiplex donde desea ver la Pelicula.
+                            </small>
+
                         </div>
                         <div class="form-group">
                             <input type="text" name="duracionPelicula" class="form-control"

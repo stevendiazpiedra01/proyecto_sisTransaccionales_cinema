@@ -15,14 +15,24 @@
                 <label for="lname">total de sillas de multiplex :</label><br>
                 <input type="text" id="r" name="cantidadSillas"readonly="readonly"/><br><br>
                 <input type="button" value="Total sillas" onclick="totalsillas()"/>
-                <input type="submit" value="Registrar">
+                <input type="submit" value="Registrar"> <br><br>
+                <label for="lname">Total de sillas Generales :</label><br>
+                <input type="text" id="c" name="cantidadSillasPREF"readonly="readonly"/><br><br>
+                <label for="lname">Total de sillas de Preferenciales :</label><br>
+                <input type="text" id="d" name="cantidadSillasGENE"readonly="readonly"/><br><br>
                 <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
                  <script>   
                    function totalsillas() {
                     var numero1 = Number($("#a").val());
                     var numero2 = Number($("#b").val());
                     var multiplicar = numero1 * numero2;
-                    var resultado = $("#r").val(multiplicar); }
+                    var resultado = $("#r").val(multiplicar); 
+                    var preferenciales = Math.round(multiplicar * 0.3333333333)
+                    var resPre = $("#c").val(preferenciales);
+                    var generales = (multiplicar - preferenciales)
+                    var resGen = $("#d").val(generales);
+                    }
+                    
                   </script>
               </form> 
           </div>

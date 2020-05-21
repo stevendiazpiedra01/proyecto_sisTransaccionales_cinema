@@ -14,12 +14,15 @@ router.get('/listar_Peliculas_Reserva', isLoggedIn, async(req, res) => {
     res.render('reservas/listar_Peliculas_Reserva', { peliculas });
 });
 
-router.get('/agregar_Reservas', isLoggedIn, async(req, res) => {
-    res.render('peliculas/agregar_Reservas');
+
+router.get('/agregar_Reservas/:idPeliculas', isLoggedIn, async(req, res) => {
+    const { idPeliculas } = req.params;
+    const peliculas = await pool.query('SELECT * FROM peliculas WHERE idPelicula = ?', [idPeliculas]);
+    res.render('reservas/agregar_Reservas', { pelicula: peliculas[0] });
 });
 
-//Creacion del metodo Post Para agregar reservas/agregar
-router.post('/agregar_Reservas', isLoggedIn, async(req, res) => {
+router.get('/agregar_Reservas/:idPeliculas', isLoggedIn, async(req, res) => {
+
     const { idPelicula } = req.params;
     const { seleccionarPelicula, seleccionarMultiplex, seleccionarSala } = req.body;
 

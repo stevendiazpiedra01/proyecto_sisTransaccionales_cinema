@@ -5,18 +5,21 @@
                 <div class="card text-center">
                     <div class="card-body">
                  <form action="/multiplex/listar_multiplex" method="POST">
-                         <p style="color:red;">id de multiplex:</p>
-                            <h3 class="card-title text-uppercase">
-                                {{idMultiplex}}
-                            </h3>
-                        <p style="color:red;">numero de salas:</p>
-                        <p class="m-2">{{numeroSalas}}</p>
-                        <p style="color:red;">cantidad de sillas multiplex: </p>
-                        <p class="m-2">{{cantidadSillas}}</p>
-                        <p style="color:red;">nombre de multiplex</p>
+                        <p style="color:red;">Nombre de multiplex</p>
                         <p class="m-2">{{nombreMultiplex}}</p>
-                        <a href="/multiplex/eliminar/{{idMultiplex}}" class="btn btn-danger">Eliminar multiplex</a>
-                        <a href="/multiplex/editar_multiplex/{{idMultiplex}}" class="btn btn-secondary">Editar multiplex</a>
+                        <p style="color:red;">Numero de salas:</p>
+                        <p class="m-2">{{numeroSalas}}</p>
+                        <p style="color:red;">Cantidad de sillas multiplex: </p>
+                        <p class="m-2">{{cantidadSillas}}</p>
+                        <p style="color:red;">Cantidad de sillas Generales: </p>
+                        <p class="m-2">{{cantidadSillasGENE}}</p>
+                        <p style="color:red;">Cantidad de sillas Preferenciales: </p>
+                        <p class="m-2">{{cantidadSillasPREF}}</p>
+                        <a href="/multiplex/eliminar/{{idMultiplex}}" class="btn btn-danger">Eliminar multiplex</a>                        
+                        <script>
+                            
+
+                        </script>
                     </div>
                 </div>
                 </form>
@@ -25,7 +28,7 @@
         {{else}}
             <div class="col-md-4 mx-auto">
                 <div class="card card-body text-center">
-                    <p>No Hay Links Creados Aun.</p>
+                    <p>No Hay Multiplex Registrados Aun.</p>
                     <a href="/multiplex/agregar_multiplex">Crear Uno!</a>
                 </div>
             </div>            

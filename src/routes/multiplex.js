@@ -8,16 +8,19 @@ router.get('/agregar_multiplex', isLoggedIn, (req, res) => {
     res.render('multiplex/agregar_multiplex');
 })
 
-router.post('/agregar_multiplex',isLoggedIn, async (req, res) => {
-    const { nombreMultiplex, numeroSalas,cantidadSillas} = req.body;
-    const newMultiplex ={
+router.post('/agregar_multiplex', isLoggedIn, async(req, res) => {
+    const { nombreMultiplex, numeroSalas, cantidadSillas, cantidadSillasPREF, cantidadSillasGENE } = req.body;
+    const newMultiplex = {
         nombreMultiplex,
         numeroSalas,
-        cantidadSillas
+        cantidadSillas,
+        cantidadSillasPREF,
+        cantidadSillasGENE
+
     };
     await pool.query('INSERT INTO multiplex set ?', [newMultiplex]);
     req.flash('success', 'El registro se ha REALIZADO satisfactoriamente');
-    res.redirect('/multiplex/agregar_multiplex');
+    res.redirect('/multiplex');
 })
 
 //Listar Compra de boletas
@@ -34,5 +37,3 @@ router.get('/eliminar/:idMultiplex', isLoggedIn, async(req, res) => {
     res.redirect('/multiplex');
 });
 module.exports = router;
-
-
