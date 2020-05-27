@@ -56,6 +56,7 @@ app.use('/comprarBoleta', require('./routes/comprarBoleta'));
 app.use('/multiplex', require('./routes/multiplex'));
 app.use('/metodoPagos', require('./routes/metodoPagos'));
 app.use('/reservas', require('./routes/reservas'));
+app.use('/confiteria',require('./routes/confiteria'));
 
 
 // Public
