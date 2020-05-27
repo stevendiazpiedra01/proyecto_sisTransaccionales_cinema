@@ -1,25 +1,54 @@
-<div>Confiteria Unimonito</div>
+<div class="container">
+     <div class="card bg-warning">
+          <div class="card text-center">
+              <div class="card-body">
+               <form action="/confiteria/agregar_Confiteria" method="POST">
+                   
+                        <p style="color:red;">Seleccione multiplex:</p>
+                        <div class="form-group"> 
+                        <select id="fk_Multiplex" name="fk_Multiplex">
+                        <option value="12">Titan Plaza</option>
+                        <option value="Unicentro">Unicentro</option>
+                        <option value="Plaza Central">Plaza Central</option>
+                        <option value="Gran Estacion">Gran Estacion</option>
+                        <option value="Embajador">Embajador</option>
+                        <option value="Americas">Americas</option>
+                        </select>
+                        </div>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Brayan Steven Diaz
-</body>
-</html>
+                          <p style="color:red;">nombre producto:</p>
+                          <div class="form-group">
+                            <input type="text" class="form-control" name="nombreProducto" placeholder="Escriba nombre del producto"
+                                autofocus>
+                        </div>  
+                            
+                             <p style="color:red;">foto producto:</p>
+                        <div class="form-group">
+                            <input type="url" name="Foto" class="form-control" placeholder="URL Foto">
+                        </div>
+                           
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Jeikson
-</body>
-</html>
+                           <p style="color:red;">pago confiteria:</p>
+                        <div class="form-group">
+                            <textarea name="pagoConfiteria" rows="2" class="form-control"
+                                placeholder="Pago de confiteria"></textarea>
+                        </div>
+
+                           <p style="color:red;">cantidad de producto:</p>
+                        <div class="form-group">
+                             <input type="number" id="a" name="cantidadProducto" value="maximo 6 " min="1" max="500"><br>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                Guardar
+                            </button>  
+                        </div>
+               
+               
+               
+               </form>
+             </div>
+        </div>  
+    </div>
+</div>
